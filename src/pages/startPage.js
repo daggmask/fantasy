@@ -6,7 +6,8 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button,
+  Button, 
+  Input
 } from "reactstrap";
 
 const StartPage = () => {
@@ -16,10 +17,15 @@ return (
       <CardTitle className="text-center">
         <h1 className="text-primary">Fantasy world generator</h1>
       </CardTitle>
-      <CardSubtitle>Card subtitle</CardSubtitle>
-      <CardText>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+      <CardSubtitle className="text-center mt-4 mb-4">
+          <h5>
+        Welcome to this fantasy world generator! <br />
+        In this generator you can create a world to your liking with different
+        creatures, cities, countries and armies.
+          </h5>
+      </CardSubtitle>
+      <CardText className="mt-4 text-center">
+        First you have to enter the name of your world <Input className="mx-auto col-4 mt-2" placeholder="World name"/>
       </CardText>
     </CardBody>
   </Card>
