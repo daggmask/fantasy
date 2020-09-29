@@ -1,6 +1,6 @@
 class FantasyWorld{
-    worldName = "";
-    countries = []
+   static worldName = ""
+   static countries = []
 
     constructor(worldName){
         this.worldName = worldName
