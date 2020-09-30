@@ -1,0 +1,3 @@
+class PopulationCreator {
+  static createEntity = () => {};
+}
