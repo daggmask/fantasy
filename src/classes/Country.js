@@ -2,10 +2,10 @@ class Country {
      countryName = ""
      cities = []
 
-     constructor(){}
+     constructor(name){this.countryName = name}
 
-     createCity = () => {
-         
+     createCity = (cityName,isEvil) => {
+         this.cities.push(new City(cityName,isEvil))
      }
 }
 export default Country

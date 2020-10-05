@@ -1,9 +1,21 @@
 class ArmyHandler {
   static army = [];
 
-  static registerArmy = () => {};
+  static registerArmy = (armyObject) => { return (command) = this.sendCommand(armyObject,command)};
 
-  static registerSoldier = () => {};
+  static registerSoldier = (soldier, army, filter = () => true) => {
+    this.army.push({
+      soldier,
+      army,
+      filter
+    })
+  };
 
-  static sendCommand = () => {};
+  static sendCommand = (armyObject, command) => {
+    for(let {soldier, army, filter} of this.army){
+      if(armyObject === army && filter(command)){
+        soldier.listen(army,command)
+      }
+    }
+  };
 }

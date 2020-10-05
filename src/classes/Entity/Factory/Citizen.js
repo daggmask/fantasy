@@ -1,7 +1,7 @@
 class Citizen {
     work = ""
 
-    constructor(work){
-        this.work = work
+    constructor(){
+        this.work = "worker"
     }
 }

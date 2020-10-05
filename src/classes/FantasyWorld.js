@@ -1,13 +1,15 @@
+import Country from "./Country"
+
 class FantasyWorld{
-   static worldName = ""
-   static countries = []
+   worldName = ""
+   countries = []
 
     constructor(worldName){
         this.worldName = worldName
     }
 
-    createCountry = () => {
-
+    createCountry = (countryName) => {
+    this.countries.push(new Country(countryName))
     }
 }
 export default FantasyWorld

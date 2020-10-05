@@ -8,5 +8,6 @@ class Entity {
         this.entityName = name
         this.entityAge = age
         this.isEvil = isEvil
+        this.race = RaceGenerator.chooseRace(isEvil)
     }
 }

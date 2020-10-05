@@ -1,3 +1,3 @@
 class PopulationCreator {
-  static createEntity = () => {};
+  static createEntity = (name,age,isEvil) => { return new Entity(name,age,isEvil)};
 }

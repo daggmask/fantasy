@@ -2,7 +2,8 @@ class Soldier{
     rank = ""
     gear = {}
 
-    constructor(rank){
-        this.rank = rank
+    constructor(){
+        this.rank = "Recruit"
     }
+    wearGear = () => {}
 }

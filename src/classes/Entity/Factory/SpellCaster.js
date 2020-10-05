@@ -3,5 +3,7 @@ class SpellCaster{
 
     constructor(){}
 
-    learnSpell = (spell) => {}
+    learnSpell = (newSpell) => {
+        spell = new Ability(newSpell.name,newSpell.description)
+        this.spells.push(spell)}
 }
