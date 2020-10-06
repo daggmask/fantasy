@@ -2,6 +2,6 @@ class Citizen {
     work = ""
 
     constructor(){
-        this.work = "worker"
+        this.work = "Civilian"
     }
 }

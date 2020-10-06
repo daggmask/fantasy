@@ -1,8 +1,13 @@
 class Gear{
    static set = {}
 
-    constructor(set){
-        this.set = set
+    constructor(){
+
     }
-   static wear = (gear) => {}
+   static wear = (wearWeapon,wearArmour,wearTrinket,wearCape) => { this.set = BaseGearDecorator.getGear(
+     wearWeapon,
+     wearArmour,
+     wearTrinket,
+     wearCape
+   );}
 }

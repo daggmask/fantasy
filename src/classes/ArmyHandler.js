@@ -1,7 +1,7 @@
 class ArmyHandler {
   static army = [];
 
-  static registerArmy = (armyObject) => { return (command) = this.sendCommand(armyObject,command)};
+  static registerArmy = (armyObject) => { return this.sendCommand(armyObject,"Enlist")};
 
   static registerSoldier = (soldier, army, filter = () => true) => {
     this.army.push({
@@ -19,3 +19,5 @@ class ArmyHandler {
     }
   };
 }
+
+export default ArmyHandler

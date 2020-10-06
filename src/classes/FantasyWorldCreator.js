@@ -9,10 +9,10 @@ class FantasyWorldCreator {
     if (FantasyWorldCreator.hasBeenInstantiated) {
       throw new Error("You can only create one instance of Game!");
     }
-    Game.hasBeenInstantiated = true;
+    FantasyWorldCreator.hasBeenInstantiated = true;
   }
 
-  createWorld = (worldName) => {
+ createWorld = (worldName) => {
       this.world = new FantasyWorld(worldName)
   }
 }

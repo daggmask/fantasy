@@ -1,3 +1,5 @@
+import ArmyHandler from "./ArmyHandler";
+import PopulationCreator from './PopulationCreator'
 class City{
     cityName = ""
     isEvil = false
@@ -7,12 +9,13 @@ class City{
     constructor(cityName, isEvil){
         this.cityName = cityName
         this.isEvil = isEvil
+        this.army.name = `Army of ${cityName}`
     }
 
     Soldier = class{
         constructor(name){this.name = name}
         listen(army, command){
-            console.log(`This is ${name} of ${army}th and my current mission is: ${command}`);
+            console.log(`This is ${this.name} of ${army.name}th and my current mission is: ${command}`);
         }
     }
 
@@ -31,6 +34,5 @@ class City{
             
         }
     }
-
-
 }
+export default City

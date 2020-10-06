@@ -23,3 +23,4 @@ class RaceGenerator{
        }
     }
 }
+export default RaceGenerator
