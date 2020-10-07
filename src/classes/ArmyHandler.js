@@ -1,7 +1,7 @@
 class ArmyHandler {
   static army = [];
 
-  static registerArmy = (armyObject) => { return this.sendCommand(armyObject,"Enlist")};
+  static registerArmy = (armyObject) => { return(command) => this.sendCommand(armyObject,command)};
 
   static registerSoldier = (soldier, army, filter = () => true) => {
     this.army.push({
@@ -13,7 +13,7 @@ class ArmyHandler {
 
   static sendCommand = (armyObject, command) => {
     for(let {soldier, army, filter} of this.army){
-      if(armyObject === army && filter(command)){
+      if(armyObject.name === army && filter(command)){
         soldier.listen(army,command)
       }
     }

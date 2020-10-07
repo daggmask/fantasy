@@ -15,7 +15,7 @@ class City{
     Soldier = class{
         constructor(name){this.name = name}
         listen(army, command){
-            console.log(`This is ${this.name} of ${army.name}th and my current mission is: ${command}`);
+            console.log(`This is ${this.name} of ${army} and my current mission is: ${command}`);
         }
     }
 
@@ -23,6 +23,7 @@ class City{
     
     createArmy = (newArmyObject) => {
         newArmyObject.send = ArmyHandler.registerArmy(newArmyObject)
+        return newArmyObject
     }
     
     addSoldierToArmy = (soldier, armyToEnlist) => {

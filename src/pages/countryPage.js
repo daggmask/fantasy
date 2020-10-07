@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Input, ListGroup } from 'reactstrap'
+import { Button, Input, ListGroup, Row } from 'reactstrap'
 import CountryData from './countryData'
 
 const CountryPage = ({world}) => {
@@ -10,7 +10,6 @@ const CountryPage = ({world}) => {
         if(countryName){
             setCountries(countries.concat(countryName))
             world.createCountry(countryName)
-            console.log(world.countries);
         }
     }  
 
@@ -25,13 +24,15 @@ const CountryPage = ({world}) => {
           onChange={(data) => setCountryName(data.target.value)}
         />
         <Button color="primary" className="mt-4" onClick={() => createCountry(countryName)}>Create Country</Button>
+        <Row>
         {world.countries.map((country,i) => {
             return(
-            <ListGroup key={country.countryName + i} className="mt-4">
+            <ListGroup key={country.countryName + i} className="mt-4 mx-auto">
                 <CountryData country={country}/>
             </ListGroup>
             )
         })}
+        </Row>
       </div>
     );
 }
