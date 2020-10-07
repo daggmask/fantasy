@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {
   Card,
   CardImg,
@@ -9,16 +9,21 @@ import {
   Button, 
   Input
 } from "reactstrap";
+import  {WorldContext} from '../ContextProviders/WorldContextProvider'
+import CountryPage from './countryPage'
 import FantasyWorldCreator from '../classes/FantasyWorldCreator';
 let instance = new FantasyWorldCreator()
 
 const StartPage = () => {
+  const {world,setWorld} = useContext(WorldContext)
   const [worldName, setWorldName] = useState("")
   const [worldCreated , setWorldCreated] = useState(false)
 
   const registerWorld = () => {
-    setWorldCreated(true)
-    instance.createWorld(worldName)
+    if(worldName){
+      setWorldCreated(true)
+      setWorld(instance.createWorld(worldName));
+    }
   }
 
 return (
@@ -51,10 +56,16 @@ return (
             value={worldName}
           />
         )}
-        <Button type="submit" className="mt-2" color="primary" onClick={() => registerWorld()}>
-          Submit world name
+        <Button
+          type="submit"
+          className="mt-2"
+          color="primary"
+          onClick={() => registerWorld()}
+        >
+          {worldCreated ? "World created" : "Create world"}
         </Button>
       </CardText>
+        {world ? <CountryPage world={world}/> : null}
     </CardBody>
   </Card>
 );

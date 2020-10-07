@@ -14,6 +14,7 @@ class FantasyWorldCreator {
 
  createWorld = (worldName) => {
       this.world = new FantasyWorld(worldName)
+      return this.world
   }
 }
 export default FantasyWorldCreator
