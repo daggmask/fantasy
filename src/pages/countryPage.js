@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Input, ListGroup, Row } from 'reactstrap'
 import CountryData from './countryData'
 

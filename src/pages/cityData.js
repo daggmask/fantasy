@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from "reactstrap";
-import ArmyHandler from "../classes/ArmyHandler";
-import ArmyData from './armyData'
 import ArmyPage from "./armyPage";
 
 const CityData = ({city}) => {

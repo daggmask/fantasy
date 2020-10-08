@@ -27,7 +27,6 @@ const ArmyPage = ({ city, army, setArmy }) => {
   };
 
   const registerSoldier = (soldierName) => {
-    console.log(army.armies);
     if (soldierName && armyName) {
       city.addSoldierToArmy(soldierName, armyName);
       setSoldiers(ArmyHandler.army);

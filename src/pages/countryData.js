@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   Button,
   Input,
   Row,
@@ -65,7 +61,6 @@ const CountryData = ({country}) => {
             >
               Creat city
             </Button>
-            <DropdownItem divider toggle={false} />
             <Row>
             {country.cities.map((city, i) => {
               return (
