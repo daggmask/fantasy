@@ -36,8 +36,7 @@ const CitizenEditor = ({civilian}) => {
     }
 
     const getSoldierGear = () => {
-        console.log(hasWeapon, hasArmour, hasTrinket, hasCape);
-        console.log(
+        setGear(
           civilian.class.role.gear.wear(
             hasWeapon,
             hasArmour,
@@ -45,17 +44,6 @@ const CitizenEditor = ({civilian}) => {
             hasCape
           )
         );
-    }
-        // const raceOptions = () => {
-        //   let races = [];
-        //   for (let race in RaceGenerator.chooseRace(city.isEvil)) {
-        //     races.push(RaceGenerator.chooseRace(city.isEvil)[race]);
-        //   }
-        //   return races;
-        // };
-
-    const getGearPartInfo = (gearPart) => {
-
     }
 
     return (
