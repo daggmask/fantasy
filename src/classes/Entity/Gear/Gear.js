@@ -1,11 +1,11 @@
 import BaseGearDecorator from './BaseGearDecorator'
 class Gear{
-   static set = {}
+   set = {}
 
     constructor(){
 
     }
-   static wear = (wearWeapon,wearArmour,wearTrinket,wearCape) => { this.set = BaseGearDecorator.getGear(
+   wear = (wearWeapon,wearArmour,wearTrinket,wearCape) => { return BaseGearDecorator.getGear(
      wearWeapon,
      wearArmour,
      wearTrinket,

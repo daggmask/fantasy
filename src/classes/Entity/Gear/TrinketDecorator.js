@@ -7,3 +7,4 @@ class TrinketDecorator{
         this.trinketPlacement = placement
     }
 }
+export default TrinketDecorator

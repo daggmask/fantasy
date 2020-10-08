@@ -4,10 +4,6 @@ import TrinketDecorator from './TrinketDecorator'
 import CapeDecorator from './CapeDecorator'
 
 class BaseGearDecorator{
-    hasWeapon = false
-    hasArmour = false
-    hasTrinket = false
-    hasCape = false
 
     constructor(){
         throw new Error('Decorator is a static class')

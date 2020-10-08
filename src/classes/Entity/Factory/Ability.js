@@ -7,3 +7,4 @@ class Ability{
         this.abilityDescription = description
     }
 }
+export default Ability

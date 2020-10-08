@@ -7,3 +7,4 @@ class ArmourDecorator{
         this.armourMaterial = material
     }
 }
+export default ArmourDecorator

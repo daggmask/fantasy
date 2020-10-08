@@ -16,7 +16,7 @@ const CitizenPage = ({ city }) => {
         city={city}
       />
       <br />
-      <p onClick={() => console.log(city.citizens)}>citizens: </p>
+      <p>citizens: </p>
       <Row>
         <CitizenData citizen={city.citizens}/>
       </Row>

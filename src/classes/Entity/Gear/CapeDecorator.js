@@ -5,3 +5,4 @@ class CapeDecorator{
         this.colour = colour
     }
 }
+export default CapeDecorator

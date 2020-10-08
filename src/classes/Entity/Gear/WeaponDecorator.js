@@ -10,3 +10,5 @@ class WeaponDecorator{
         this.weaponWeight = weight
     }
 }
+
+export default WeaponDecorator
