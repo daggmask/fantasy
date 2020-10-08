@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Input,
@@ -23,6 +23,8 @@ const CountryData = ({country}) => {
              country.createCity(cityName,isEvil)
          }
      }
+
+     useEffect(() => {setCityIsEvil(false)},[])
 
     return (
       <div className="text-center">

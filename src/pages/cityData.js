@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Row, Input } from "reactstrap";
 import ArmyPage from "./armyPage";
+import CitizenPage from './citizenPage'
 
 const CityData = ({city}) => {
       const [modal, setModal] = useState(false);
@@ -16,22 +17,15 @@ const CityData = ({city}) => {
           onClick={() => setModal(true)}
           className="text-center"
         >
-          <h6>{city.cityName}</h6>
+          <h6> {city.cityName}</h6>
         </Button>
         <Modal isOpen={modal} toggle={toggle} size="xl">
           <ModalHeader className="text-center" toggle={toggle}>
-            City of {city.cityName}
+            {city.isEvil ? "Evil city" : "city"} of {city.cityName}
           </ModalHeader>
           <ModalBody className="text-center">
             <ArmyPage city={city} army={army} setArmy={setArmy} />
-            <Button color="primary">Add Citizen</Button>
-            <br />
-            citizens:{" "}
-            <Row>
-              {city.citizens.map((citizen, i) => {
-                return <div className="mt-4 mx-auto">{citizen.entityName}</div>;
-              })}
-            </Row>
+            <CitizenPage city={city}/>
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={() => setModal(false)}>
