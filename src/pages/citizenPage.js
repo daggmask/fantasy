@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Button,
   Row,
 } from "reactstrap";
+import CitizenCreationModal from './citizenCreationModal'
+import CitizenData from './citizenData';
 
 const CitizenPage = ({ city }) => {
-  const addPopulation = () => {};
+    const [entities, setEntities] = useState([])
   return (
     <div>
-      <Button color="primary">Add Citizen</Button>
+      <CitizenCreationModal
+        entities={entities}
+        setEntities={setEntities}
+        city={city}
+      />
       <br />
-      citizens:{" "}
+      <p onClick={() => console.log(city.citizens)}>citizens: </p>
       <Row>
-        {city.citizens.map((citizen, i) => {
-          return <div className="mt-4 mx-auto">{citizen.entityName}</div>;
-        })}
+        <CitizenData citizen={city.citizens}/>
       </Row>
     </div>
   );

@@ -1,7 +1,8 @@
 class Citizen {
-    work = ""
+    work = "Civilian"
 
     constructor(){
-        this.work = "Civilian"
     }
 }
+
+export default Citizen

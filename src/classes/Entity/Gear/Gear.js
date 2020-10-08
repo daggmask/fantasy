@@ -1,3 +1,4 @@
+import BaseGearDecorator from './BaseGearDecorator'
 class Gear{
    static set = {}
 
@@ -11,3 +12,4 @@ class Gear{
      wearCape
    );}
 }
+export default Gear

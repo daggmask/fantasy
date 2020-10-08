@@ -1,3 +1,4 @@
+import Gear from '../Gear/Gear'
 class Soldier{
     rank = ""
     gear = {}
@@ -7,3 +8,4 @@ class Soldier{
         this.gear = new Gear()
     }
 }
+export default Soldier

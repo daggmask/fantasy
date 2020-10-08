@@ -1,3 +1,8 @@
+import WeaponDecorator from './WeaponDecorator'
+import ArmourDecorator from './ArmourDecorator'
+import TrinketDecorator from './TrinketDecorator'
+import CapeDecorator from './CapeDecorator'
+
 class BaseGearDecorator{
     hasWeapon = false
     hasArmour = false
@@ -9,7 +14,7 @@ class BaseGearDecorator{
     }
     
    static getGear = (hasWeapon,hasArmour,hasTrinket,hasCape) => {
-        set = {}
+        let set = {}
         if(hasWeapon){
             set.weapon = new WeaponDecorator("Sword",1,6)
         }
@@ -25,3 +30,4 @@ class BaseGearDecorator{
         return set
     }
 }
+export default BaseGearDecorator

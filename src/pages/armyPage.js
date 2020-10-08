@@ -79,7 +79,7 @@ const ArmyPage = ({ city, army, setArmy }) => {
       <div className="mb-4">
         <Input
           className="mt-4 mx-auto mb-2 col-6"
-          placeholder="Soldier name"
+          placeholder="Enter Command here"
           value={command}
           onChange={(data) => setCommand(data.target.value)}
         />
