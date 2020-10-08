@@ -75,6 +75,11 @@ const CitizenEditor = ({civilian}) => {
               <ListGroupItem>
                 Role: {civilian.class.role.constructor.name}
               </ListGroupItem>
+              {civilian.class.role.constructor.name === "Citizen" ? (
+                <ListGroupItem>
+                  Work: {civilian.class.role.work}
+                </ListGroupItem>
+              ) : null}
               {civilian.class.role.constructor.name === "SpellCaster" ||
               civilian.class.role.constructor.name === "Soldier" ? (
                 <div>
@@ -114,56 +119,107 @@ const CitizenEditor = ({civilian}) => {
                 </div>
               ) : null}
               {civilian.class.role.constructor.name === "Soldier" ? (
-                <ListGroupItem>
-                  <h6>Wear gear: </h6>
-                  <Row>
-                    <Label check className="mx-auto">
-                      <Input
-                        type="checkbox"
-                        value={hasWeapon}
-                        onChange={() => setHasWeapon(!hasWeapon)}
-                      />{" "}
-                      Weapon
-                    </Label>
-                    <Label check className="mx-auto">
-                      <Input
-                        type="checkbox"
-                        value={hasArmour}
-                        onChange={() => setHasArmour(!hasArmour)}
-                      />{" "}
-                      Armour
-                    </Label>
-                    <Label check className="mx-auto">
-                      <Input
-                        type="checkbox"
-                        value={hasTrinket}
-                        onChange={() => setHasTrinket(!hasTrinket)}
-                      />{" "}
-                      Trinket
-                    </Label>
-                    <Label check className="mx-auto">
-                      <Input
-                        type="checkbox"
-                        value={hasCape}
-                        onChange={() => setHasCape(!hasCape)}
-                      />{" "}
-                      Cape
-                    </Label>
-                  </Row>
-                  <Button
-                    type="submit"
-                    className="mx-auto mt-4"
-                    color="primary"
-                    onClick={() => getSoldierGear()}
-                  >
-                    Finish gear check
-                  </Button>
-                </ListGroupItem>
+                <div>
+                  <ListGroupItem>
+                    <h6>Wear gear: </h6>
+                    <Row>
+                      <Label check className="mx-auto">
+                        <Input
+                          type="checkbox"
+                          value={hasWeapon}
+                          onChange={() => setHasWeapon(!hasWeapon)}
+                        />{" "}
+                        Weapon
+                      </Label>
+                      <Label check className="mx-auto">
+                        <Input
+                          type="checkbox"
+                          value={hasArmour}
+                          onChange={() => setHasArmour(!hasArmour)}
+                        />{" "}
+                        Armour
+                      </Label>
+                      <Label check className="mx-auto">
+                        <Input
+                          type="checkbox"
+                          value={hasTrinket}
+                          onChange={() => setHasTrinket(!hasTrinket)}
+                        />{" "}
+                        Trinket
+                      </Label>
+                      <Label check className="mx-auto">
+                        <Input
+                          type="checkbox"
+                          value={hasCape}
+                          onChange={() => setHasCape(!hasCape)}
+                        />{" "}
+                        Cape
+                      </Label>
+                    </Row>
+                    <Button
+                      type="submit"
+                      className="mx-auto mt-4"
+                      color="primary"
+                      onClick={() => getSoldierGear()}
+                    >
+                      Finish gear check
+                    </Button>
+                  </ListGroupItem>
+                  {civilian.class.role.gear.set.weapon ? (
+                    <ListGroupItem>
+                      <h6>Weapon: </h6>
+                      <p>
+                        Name: {civilian.class.role.gear.set.weapon.weaponName}
+                      </p>
+                      <p>
+                        Damage:{" "}
+                        {civilian.class.role.gear.set.weapon.weaponDamage}
+                      </p>
+                      <p>
+                        Weight:
+                        {civilian.class.role.gear.set.weapon.weaponWeight}{" "}
+                        {civilian.class.role.gear.set.weapon.weaponWeightUnit}
+                      </p>
+                    </ListGroupItem>
+                  ) : null}
+                  {civilian.class.role.gear.set.armour ? (
+                    <ListGroupItem>
+                      <h6>Armour: </h6>
+                      <p>
+                        Material:{" "}
+                        {civilian.class.role.gear.set.armour.armourMaterial}
+                      </p>
+                      <p>
+                        Quality:{" "}
+                        {civilian.class.role.gear.set.armour.armourQuality}
+                      </p>
+                    </ListGroupItem>
+                  ) : null}
+                  {civilian.class.role.gear.set.trinket ? (
+                    <ListGroupItem>
+                      <h6>Trinket: </h6>
+                      <p>
+                        Name: {civilian.class.role.gear.set.trinket.trinketName}
+                      </p>
+                      <p>
+                        Placement:{" "}
+                        {civilian.class.role.gear.set.trinket.trinketPlacement}
+                      </p>
+                    </ListGroupItem>
+                  ) : null}
+                  {civilian.class.role.gear.set.cape ? (
+                    <ListGroupItem>
+                      <h6>Cape: </h6>
+                      <p>
+                        Cape colour: {civilian.class.role.gear.set.cape.colour}
+                      </p>
+                    </ListGroupItem>
+                  ) : null}
+                </div>
               ) : null}
             </ListGroup>
           </ModalBody>
           <ModalFooter>
-            <Button color="success">Save</Button>{" "}
             <Button color="primary" onClick={toggle}>
               Close
             </Button>

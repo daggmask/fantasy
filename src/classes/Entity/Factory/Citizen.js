@@ -1,5 +1,5 @@
 class Citizen {
-    work = "Civilian"
+    work = "Peasant"
 
     constructor(){
     }

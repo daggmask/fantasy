@@ -5,7 +5,14 @@ class Gear{
     constructor(){
 
     }
-   wear = (wearWeapon,wearArmour,wearTrinket,wearCape) => { return BaseGearDecorator.getGear(
+   wear = (wearWeapon,wearArmour,wearTrinket,wearCape) => { 
+     this.set = BaseGearDecorator.getGear(
+       wearWeapon,
+       wearArmour,
+       wearTrinket,
+       wearCape
+     );
+     return BaseGearDecorator.getGear(
      wearWeapon,
      wearArmour,
      wearTrinket,
